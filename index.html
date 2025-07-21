@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern MP3 Music Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="player-container">
+    <div class="current-song">
+      <img id="cover" src="" alt="Album Cover" class="cover">
+      <div class="song-info">
+        <h2 id="title">Song Title</h2>
+        <p id="artist">Artist</p>
+        <div class="progress-container" id="progress-container">
+          <span id="current-time">0:00</span>
+          <div class="progress-bar-bg">
+            <div class="progress-bar" id="progress-bar"></div>
+            <div class="progress-pointer" id="progress-pointer"></div>
+          </div>
+          <span id="duration">0:00</span>
+        </div>
+        <div class="controls">
+          <div class="controls-group main-controls">
+            <button id="prev" title="Previous"><i class="fa-solid fa-backward"></i></button>
+            <button id="play" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
+            <button id="next" title="Next"><i class="fa-solid fa-forward"></i></button>
+          </div>
+          <div class="controls-group secondary-controls">
+            <button id="shuffle" title="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+            <button id="repeat" title="Repeat"><i class="fa-solid fa-repeat"></i></button>
+            <div class="volume-control-wrapper">
+              <button id="mute"><i class="fa-solid fa-volume-up"></i></button>
+              <div class="volume-bar-container">
+                <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5" orient="vertical">
+              </div>
+            </div>
+            <button id="playlist-toggle"><i class="fa-solid fa-list"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="playlist" id="playlist">
+      <!-- Playlist items will be injected here -->
+    </div>
+    <audio id="audio"></audio>
+  </div>
+
+
+
+  <div class="player-container-dark">
+    <div class="current-song-dark">
+      <img id="cover-dark" src="" alt="Album Cover" class="cover-dark">
+      <div class="song-info-dark">
+        <h2 id="title-dark">Song Title</h2>
+        <p id="artist-dark">Artist</p>
+        <div class="progress-container-dark" id="progress-container-dark">
+          <span id="current-time-dark">0:00</span>
+          <div class="progress-bar-bg-dark">
+            <div class="progress-bar-dark" id="progress-bar-dark"></div>
+            <div class="progress-pointer-dark" id="progress-pointer-dark"></div>
+          </div>
+          <span id="duration-dark">0:00</span>
+        </div>
+        <div class="controls-dark">
+          <div class="controls-group-dark main-controls-dark">
+            <button id="prev-dark" title="Previous"><i class="fa-solid fa-backward"></i></button>
+            <button id="play-dark" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
+            <button id="next-dark" title="Next"><i class="fa-solid fa-forward"></i></button>
+          </div>
+          <div class="controls-group-dark secondary-controls-dark">
+            <button id="shuffle-dark" title="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+            <button id="repeat-dark" title="Repeat"><i class="fa-solid fa-repeat"></i></button>
+            <div class="volume-control-wrapper-dark">
+              <button id="mute-dark"><i class="fa-solid fa-volume-up"></i></button>
+              <div class="volume-bar-container-dark">
+                <input type="range" id="volume-bar-dark" min="0" max="1" step="0.01" value="0.5" orient="vertical">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio id="audio-dark"></audio>
+  </div>
+
+
+
+  <div class="player-container-minimal">
+    <div class="current-song-minimal">
+      <img id="cover-minimal" src="alice-cover.jpg" alt="Album Cover" class="cover-minimal">
+      <div class="song-info-minimal">
+        <h2 id="title-minimal">01 - Proem & Down the Rabbit-hole</h2>
+        <p id="artist-minimal">Alice in Wonderland - Lewis Carroll</p>
+        <div class="progress-container-minimal" id="progress-container-minimal">
+          <span id="current-time-minimal">0:00</span>
+          <div class="progress-bar-bg-minimal">
+            <div class="progress-bar-minimal" id="progress-bar-minimal"></div>
+            <div class="progress-pointer-minimal" id="progress-pointer-minimal"></div>
+          </div>
+          <span id="duration-minimal">12:08</span>
+        </div>
+        <div class="controls-minimal">
+          <div class="controls-group-minimal main-controls-minimal">
+            <button id="prev-minimal" title="Previous"><i class="fa-solid fa-backward"></i></button>
+            <button id="play-minimal" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
+            <button id="next-minimal" title="Next"><i class="fa-solid fa-forward"></i></button>
+          </div>
+          <div class="controls-group-minimal secondary-controls-minimal">
+            <button id="shuffle-minimal" title="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+            <button id="repeat-minimal" title="Repeat"><i class="fa-solid fa-repeat"></i></button>
+            <div class="volume-control-wrapper-minimal">
+              <button id="mute-minimal"><i class="fa-solid fa-volume-up"></i></button>
+              <div class="volume-bar-container-minimal">
+                <input type="range" id="volume-bar-minimal" min="0" max="1" step="0.01" value="0.5" orient="vertical">
+              </div>
+            </div>
+            <button id="playlist-toggle-minimal"><i class="fa-solid fa-list"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="playlist-minimal" id="playlist-minimal">
+      <!-- Playlist items will be injected here -->
+    </div>
+    <audio id="audio-minimal"></audio>
+  </div>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- https://elfsight.com/audio-player-widget/blogger/ -->
