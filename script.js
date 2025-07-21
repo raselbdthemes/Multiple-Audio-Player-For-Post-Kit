@@ -1,69 +1,26 @@
-// Sample playlist array (10 songs, dummy data)
-const songs = [
-  {
-    title: "Faster Than My Dreams",
-    artist: "Moon",
-    src: "songs/faster-than-my-dreams.mp3",
-    cover: "songs/song-cover-photo-01.png",
-    duration: 196 // seconds
-  },
-  {
-    title: "EONA - Emotional Ambient Pop",
-    artist: "Curtis Cole",
-    src: "songs/saturn.mp3",
-    cover: "songs/song-cover-photo-02.png",
-    duration: 177
-  },
-  {
-    title: "Future Design",
-    artist: "Shtriker Big Band",
-    src: "songs/lemonade.mp3",
-    cover: "songs/song-cover-photo-04.png",
-    duration: 142
-  },
-  {
-    title: "Cyberpunk Sci-Fi Trailer Action Intro",
-    artist: "Nova",
-    src: "songs/dreamscape.mp3",
-    cover: "songs/song-cover-photo-05.png",
-    duration: 210
-  },
-  {
-    title: "Experimental Cinematic Hip-Hop",
-    artist: "Echoes",
-    src: "songs/sunset-drive.mp3",
-    cover: "songs/song-cover-photo-06.png",
-    duration: 188
-  },
-  {
-    title: "Gardens - Stylish Chill",
-    artist: "Lights",
-    src: "songs/midnight-city.mp3",
-    cover: "songs/song-cover-photo-07.png",
-    duration: 201
-  },
-  {
-    title: "Kugelsicher by TremoxBeatz",
-    artist: "Billie",
-    src: "songs/ocean-eyes.mp3",
-    cover: "songs/song-cover-photo-08.png",
-    duration: 155
-  },
-  {
-    title: "Spinning Head",
-    artist: "John Mayer",
-    src: "songs/gravity.mp3",
-    cover: "songs/song-cover-photo-09.png",
-    duration: 230
-  },
-  {
-    title: "Stylish Deep Electronic",
-    artist: "Adam Levine",
-    src: "songs/lost-stars.mp3",
-    cover: "songs/song-cover-photo-10.png",
-    duration: 205
-  }
-];
+// =====================
+// Helper: Get Playlist from DOM data-attributes
+// =====================
+
+function getPlaylistFromDOM(playlistContainerId) {
+  const playlist = [];
+  const items = document.querySelectorAll(`#${playlistContainerId} .playlist-item`);
+  items.forEach(item => {
+    playlist.push({
+      title: item.dataset.title,
+      artist: item.dataset.artist,
+      src: item.dataset.src,
+      cover: item.dataset.cover
+    });
+  });
+  return playlist;
+}
+
+// =====================
+// Global Audio Elements Array for Single-Play Control
+// =====================
+
+const allAudioElements = [];
 
 class AudioPlayer {
   constructor({container, songs, hasPlaylist = true}) {
@@ -402,25 +359,60 @@ class AudioPlayer {
   }
 }
 
-// Instantiate for both players
-window.addEventListener('DOMContentLoaded', () => {
-  // Player 1 (light, with playlist)
-  const player1 = new AudioPlayer({
-    container: document.querySelector('.player-container'),
-    songs: songs,
-    hasPlaylist: true
+// =====================
+// Initialize All Players
+// =====================
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Player 1: Playlist from DOM data-attributes
+  const playlist1 = getPlaylistFromDOM('playlist');
+  setupPlayer({
+    playlist: playlist1,
+    playlistContainerId: 'playlist',
+    audioId: 'audio',
+    coverId: 'cover',
+    titleId: 'title',
+    artistId: 'artist',
+    currentTimeId: 'current-time',
+    durationId: 'duration',
+    progressBarId: 'progress-bar',
+    playBtnId: 'play',
+    prevBtnId: 'prev',
+    nextBtnId: 'next'
   });
-  // Player 2 (dark, no playlist)
-  const player2 = new AudioPlayer({
-    container: document.querySelector('.player-container-dark'),
-    songs: songs,
-    hasPlaylist: false
+
+  // Player 2 (Dark): Playlist from DOM data-attributes
+  const playlist2 = getPlaylistFromDOM('playlist-dark');
+  setupPlayer({
+    playlist: playlist2,
+    playlistContainerId: 'playlist-dark',
+    audioId: 'audio-dark',
+    coverId: 'cover-dark',
+    titleId: 'title-dark',
+    artistId: 'artist-dark',
+    currentTimeId: 'current-time-dark',
+    durationId: 'duration-dark',
+    progressBarId: 'progress-bar-dark',
+    playBtnId: 'play-dark',
+    prevBtnId: 'prev-dark',
+    nextBtnId: 'next-dark'
   });
-  // Player 3 (minimal, with playlist)
-  const player3 = new AudioPlayer({
-    container: document.querySelector('.player-container-minimal'),
-    songs: songs, // চাইলে এখানে audiobookSongs দিতে পারেন
-    hasPlaylist: true
+
+  // Player 3 (Minimal): Playlist from DOM data-attributes
+  const playlist3 = getPlaylistFromDOM('playlist-minimal');
+  setupPlayer({
+    playlist: playlist3,
+    playlistContainerId: 'playlist-minimal',
+    audioId: 'audio-minimal',
+    coverId: 'cover-minimal',
+    titleId: 'title-minimal',
+    artistId: 'artist-minimal',
+    currentTimeId: 'current-time-minimal',
+    durationId: 'duration-minimal',
+    progressBarId: 'progress-bar-minimal',
+    playBtnId: 'play-minimal',
+    prevBtnId: 'prev-minimal',
+    nextBtnId: 'next-minimal'
   });
 });
 
