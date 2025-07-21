@@ -29,6 +29,10 @@ class AudioPlayer {
     this.hasPlaylist = hasPlaylist;
     // DOM elements
     this.audio = container.querySelector('audio');
+    // Register this audio element for global single-play control
+    if (!allAudioElements.includes(this.audio)) {
+      allAudioElements.push(this.audio);
+    }
     this.cover = container.querySelector('.cover, .cover-dark, .cover-minimal');
     this.title = container.querySelector('#title, #title-dark, #title-minimal');
     this.artist = container.querySelector('#artist, #artist-dark, #artist-minimal');
@@ -88,6 +92,10 @@ class AudioPlayer {
     this.highlightPlaylistItem(index);
   }
   playSong() {
+    // Pause all other audio elements before playing this one
+    allAudioElements.forEach(aud => {
+      if (aud !== this.audio) aud.pause();
+    });
     this.audio.play();
     this.isPlaying = true;
     this.playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
