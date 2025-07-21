@@ -71,8 +71,15 @@ class AudioPlayer {
   }
   loadSong(index) {
     const song = this.songs[index];
+    // Determine fallback cover based on player container
+    let fallbackCover = "songs/song-cover-photo-01.png";
+    if (this.container.classList.contains('player-container-dark')) {
+      fallbackCover = "songs/song-cover-photo-04.png";
+    } else if (this.container.classList.contains('player-container-minimal')) {
+      fallbackCover = "songs/song-cover-photo-10.png";
+    }
     this.audio.src = song.src;
-    this.cover.src = song.cover;
+    this.cover.src = song.cover || fallbackCover;
     this.title.textContent = song.title;
     this.artist.textContent = song.artist;
     this.durationEl.textContent = this.formatTime(song.duration);
@@ -364,55 +371,28 @@ class AudioPlayer {
 // =====================
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Player 1: Playlist from DOM data-attributes
+  // Player 1
   const playlist1 = getPlaylistFromDOM('playlist');
-  setupPlayer({
-    playlist: playlist1,
-    playlistContainerId: 'playlist',
-    audioId: 'audio',
-    coverId: 'cover',
-    titleId: 'title',
-    artistId: 'artist',
-    currentTimeId: 'current-time',
-    durationId: 'duration',
-    progressBarId: 'progress-bar',
-    playBtnId: 'play',
-    prevBtnId: 'prev',
-    nextBtnId: 'next'
+  new AudioPlayer({
+    container: document.querySelector('.player-container'),
+    songs: playlist1,
+    hasPlaylist: true
   });
 
-  // Player 2 (Dark): Playlist from DOM data-attributes
+  // Player 2
   const playlist2 = getPlaylistFromDOM('playlist-dark');
-  setupPlayer({
-    playlist: playlist2,
-    playlistContainerId: 'playlist-dark',
-    audioId: 'audio-dark',
-    coverId: 'cover-dark',
-    titleId: 'title-dark',
-    artistId: 'artist-dark',
-    currentTimeId: 'current-time-dark',
-    durationId: 'duration-dark',
-    progressBarId: 'progress-bar-dark',
-    playBtnId: 'play-dark',
-    prevBtnId: 'prev-dark',
-    nextBtnId: 'next-dark'
+  new AudioPlayer({
+    container: document.querySelector('.player-container-dark'),
+    songs: playlist2,
+    hasPlaylist: true
   });
 
-  // Player 3 (Minimal): Playlist from DOM data-attributes
+  // Player 3
   const playlist3 = getPlaylistFromDOM('playlist-minimal');
-  setupPlayer({
-    playlist: playlist3,
-    playlistContainerId: 'playlist-minimal',
-    audioId: 'audio-minimal',
-    coverId: 'cover-minimal',
-    titleId: 'title-minimal',
-    artistId: 'artist-minimal',
-    currentTimeId: 'current-time-minimal',
-    durationId: 'duration-minimal',
-    progressBarId: 'progress-bar-minimal',
-    playBtnId: 'play-minimal',
-    prevBtnId: 'prev-minimal',
-    nextBtnId: 'next-minimal'
+  new AudioPlayer({
+    container: document.querySelector('.player-container-minimal'),
+    songs: playlist3,
+    hasPlaylist: true
   });
 });
 

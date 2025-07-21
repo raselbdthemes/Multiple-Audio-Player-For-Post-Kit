@@ -15,7 +15,7 @@
 
   <div class="player-container">
     <div class="current-song">
-      <img id="cover" src="" alt="Album Cover" class="cover">
+      <img id="cover" src="songs/song-cover-photo-01.png" alt="Album Cover" class="cover">
       <div class="song-info">
         <h2 id="title">Song Title</h2>
         <p id="artist">Artist</p>
@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <div class="playlist" id="playlist">
+    <div class="playlist show" id="playlist">
       <div class="playlist-item"
            data-title="Dreamscape"
            data-artist="Unknown"
@@ -69,7 +69,6 @@
            data-cover="songs/song-cover-photo-03.png">
         Lemonade - Unknown
       </div>
-      <!-- আরও গান চাইলে এখানেই data-attribute দিয়ে যোগ করুন -->
     </div>
     <audio id="audio"></audio>
   </div>
@@ -78,7 +77,7 @@
 
   <div class="player-container-dark">
     <div class="current-song-dark">
-      <img id="cover-dark" src="" alt="Album Cover" class="cover-dark">
+      <img id="cover-dark" src="songs/song-cover-photo-04.png" alt="Album Cover" class="cover-dark">
       <div class="song-info-dark">
         <h2 id="title-dark">Song Title</h2>
         <p id="artist-dark">Artist</p>
@@ -109,50 +108,49 @@
         </div>
       </div>
     </div>
-    <div class="playlist-dark" id="playlist-dark">
+    <div class="playlist-dark" id="playlist-dark" style="display:none">
       <div class="playlist-item"
            data-title="2nd-Playlist-Item01"
-           data-artist="Artist 2A"
+           data-artist="Unknown"
            data-src="songs/2nd-Playlist-Item01.mp3"
            data-cover="songs/song-cover-photo-04.png">
-        2nd-Playlist-Item01 - Artist 2A
+        2nd-Playlist-Item01 - Unknown
       </div>
       <div class="playlist-item"
            data-title="2nd-Playlist-Item02"
-           data-artist="Artist 2B"
+           data-artist="Unknown"
            data-src="songs/2nd-Playlist-Item02.mp3"
            data-cover="songs/song-cover-photo-05.png">
-        2nd-Playlist-Item02 - Artist 2B
+        2nd-Playlist-Item02 - Unknown
       </div>
       <div class="playlist-item"
            data-title="2nd-Playlist-Item03"
-           data-artist="Artist 2C"
+           data-artist="Unknown"
            data-src="songs/2nd-Playlist-Item03.mp3"
            data-cover="songs/song-cover-photo-06.png">
-        2nd-Playlist-Item03 - Artist 2C
+        2nd-Playlist-Item03 - Unknown
       </div>
       <div class="playlist-item"
            data-title="2nd-Playlist-Item04"
-           data-artist="Artist 2D"
+           data-artist="Unknown"
            data-src="songs/2nd-Playlist-Item04.mp3"
            data-cover="songs/song-cover-photo-07.png">
-        2nd-Playlist-Item04 - Artist 2D
+        2nd-Playlist-Item04 - Unknown
       </div>
       <div class="playlist-item"
            data-title="2nd-Playlist-Item05"
-           data-artist="Artist 2E"
+           data-artist="Unknown"
            data-src="songs/2nd-Playlist-Item05.mp3"
            data-cover="songs/song-cover-photo-08.png">
-        2nd-Playlist-Item05 - Artist 2E
+        2nd-Playlist-Item05 - Unknown
       </div>
       <div class="playlist-item"
            data-title="2nd-Playlist-Item06"
-           data-artist="Artist 2F"
+           data-artist="Unknown"
            data-src="songs/2nd-Playlist-Item06.mp3"
            data-cover="songs/song-cover-photo-09.png">
-        2nd-Playlist-Item06 - Artist 2F
+        2nd-Playlist-Item06 - Unknown
       </div>
-      <!-- আরও গান চাইলে এখানেই data-attribute দিয়ে যোগ করুন -->
     </div>
     <audio id="audio-dark"></audio>
   </div>
@@ -161,7 +159,7 @@
 
   <div class="player-container-minimal">
     <div class="current-song-minimal">
-      <img id="cover-minimal" src="alice-cover.jpg" alt="Album Cover" class="cover-minimal">
+      <img id="cover-minimal" src="songs/song-cover-photo-10.png" alt="Album Cover" class="cover-minimal">
       <div class="song-info-minimal">
         <h2 id="title-minimal">01 - Proem & Down the Rabbit-hole</h2>
         <p id="artist-minimal">Alice in Wonderland - Lewis Carroll</p>
@@ -193,50 +191,49 @@
         </div>
       </div>
     </div>
-    <div class="playlist-minimal" id="playlist-minimal">
+    <div class="playlist-minimal show" id="playlist-minimal">
       <div class="playlist-item"
-           data-title="3rd-Playlist-Item01"
-           data-artist="Artist 3A"
-           data-src="songs/3rd-Playlist-Item01.mp3"
-           data-cover="songs/song-cover-photo-10.png">
-        3rd-Playlist-Item01 - Artist 3A
-      </div>
-      <div class="playlist-item"
-           data-title="3rd-Playlist-Item02"
-           data-artist="Artist 3B"
-           data-src="songs/3rd-Playlist-Item02.mp3"
-           data-cover="songs/song-cover-photo-01.png">
-        3rd-Playlist-Item02 - Artist 3B
-      </div>
-      <div class="playlist-item"
-           data-title="3rd-Playlist-Item03"
-           data-artist="Artist 3C"
-           data-src="songs/3rd-Playlist-Item03.mp3"
-           data-cover="songs/song-cover-photo-02.png">
-        3rd-Playlist-Item03 - Artist 3C
-      </div>
-      <div class="playlist-item"
-           data-title="3rd-Playlist-Item04"
-           data-artist="Artist 3D"
-           data-src="songs/3rd-Playlist-Item04.mp3"
-           data-cover="songs/song-cover-photo-03.png">
-        3rd-Playlist-Item04 - Artist 3D
-      </div>
-      <div class="playlist-item"
-           data-title="3rd-Playlist-Item05"
-           data-artist="Artist 3E"
-           data-src="songs/3rd-Playlist-Item05.mp3"
+           data-title="3rd-playlist-item01"
+           data-artist="Unknown"
+           data-src="songs/3rd-playlist-item01.mp3"
            data-cover="songs/song-cover-photo-04.png">
-        3rd-Playlist-Item05 - Artist 3E
+        3rd-playlist-item01 - Unknown
       </div>
       <div class="playlist-item"
-           data-title="3rd-Playlist-Item06"
-           data-artist="Artist 3F"
-           data-src="songs/3rd-Playlist-Item06.mp3"
+           data-title="3rd-playlist-item02"
+           data-artist="Unknown"
+           data-src="songs/3rd-playlist-item02.mp3"
            data-cover="songs/song-cover-photo-05.png">
-        3rd-Playlist-Item06 - Artist 3F
+        3rd-playlist-item02 - Unknown
       </div>
-      <!-- আরও গান চাইলে এখানেই data-attribute দিয়ে যোগ করুন -->
+      <div class="playlist-item"
+           data-title="3rd-playlist-item03"
+           data-artist="Unknown"
+           data-src="songs/3rd-playlist-item03.mp3"
+           data-cover="songs/song-cover-photo-06.png">
+        3rd-playlist-item03 - Unknown
+      </div>
+      <div class="playlist-item"
+           data-title="3rd-playlist-item04"
+           data-artist="Unknown"
+           data-src="songs/3rd-playlist-item04.mp3"
+           data-cover="songs/song-cover-photo-07.png">
+        3rd-playlist-item04 - Unknown
+      </div>
+      <div class="playlist-item"
+           data-title="3rd-playlist-item05"
+           data-artist="Unknown"
+           data-src="songs/3rd-playlist-item05.mp3"
+           data-cover="songs/song-cover-photo-08.png">
+        3rd-playlist-item05 - Unknown
+      </div>
+      <div class="playlist-item"
+           data-title="3rd-playlist-item06"
+           data-artist="Unknown"
+           data-src="songs/3rd-playlist-item06.mp3"
+           data-cover="songs/song-cover-photo-09.png">
+        3rd-playlist-item06 - Unknown
+      </div>
     </div>
     <audio id="audio-minimal"></audio>
   </div>
